@@ -17,9 +17,14 @@ public class JETIFPlugin implements IModPlugin {
 		List<JETIFWrapper> list = new ArrayList<>();
 		List<JETIFCompat> compats = new ArrayList<>();
 		
+		compats.add(new CompatActuallyAdditions());
+		compats.add(new CompatAppliedEnergistics2());
+		compats.add(new CompatAstralSorcery());
 		compats.add(new CompatCombustiveFishing());
+		compats.add(new CompatEvilCraft());
+		compats.add(new CompatThaumcraft());
 		
-		//Sort them alphabetically
+		//Sort them alphabetically by modid
 		Collections.sort(compats);
 		
 		for (JETIFCompat com : compats) if (com.shouldLoad()) com.addRecipes(list);

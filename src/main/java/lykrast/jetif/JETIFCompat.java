@@ -31,8 +31,16 @@ public abstract class JETIFCompat implements Comparable<JETIFCompat> {
 	}
 	
 	public static ItemStack getModdedItem(String name) {
+		return getModdedItem(name, 1, 0);
+	}
+	
+	public static ItemStack getModdedItem(String name, int count) {
+		return getModdedItem(name, count, 0);
+	}
+	
+	public static ItemStack getModdedItem(String name, int count, int meta) {
 		Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(name));
 		if (item == null) return ItemStack.EMPTY;
-		else return new ItemStack(item);
+		else return new ItemStack(item, count, meta);
 	}
 }

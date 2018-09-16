@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.Mod;
 	name = JETIF.NAME, 
 	version = JETIF.VERSION, 
 	acceptedMinecraftVersions = "[1.12, 1.13)",
-	dependencies = "required-after:jei")
+	dependencies = "required-after:jei@[4.12,)")
 public class JETIF
 {
     public static final String MODID = "jetif";
