@@ -1,0 +1,16 @@
+[
+{
+  "modid": "jetif",
+  "name": "Just Enough Throwing In Fluids",
+  "description": "JEI addon for throwing stuff in fluids to make other stuff.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Lykrast"],
+  "credits": "All those mods that add this kind of crafting for giving me this idea.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
