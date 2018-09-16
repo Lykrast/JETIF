@@ -16,11 +16,13 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidStack;
 
 public class JETIFCategory implements IRecipeCategory<JETIFWrapper> {
-	public static final ResourceLocation GUI = new ResourceLocation(JETIF.MODID, "textures/gui/jei.png");
-	private IDrawable background;
+	public static final ResourceLocation BACKGROUND = new ResourceLocation(JETIF.MODID, "textures/gui/jei.png");
+	public static final ResourceLocation ICON = new ResourceLocation(JETIF.MODID, "textures/gui/icon.png");
+	private IDrawable background, icon;
 	
 	public JETIFCategory(IGuiHelper guiHelper) {
-		background = guiHelper.drawableBuilder(GUI, 0, 0, 140, 32).addPadding(0, 12, 0, 0).build();
+		background = guiHelper.drawableBuilder(BACKGROUND, 0, 0, 140, 32).addPadding(0, 12, 0, 0).build();
+		icon = guiHelper.drawableBuilder(ICON, 0, 0, 16, 16).setTextureSize(16, 16).build();
 	}
 	
 	@Override
@@ -41,6 +43,11 @@ public class JETIFCategory implements IRecipeCategory<JETIFWrapper> {
 	@Override
 	public IDrawable getBackground() {
 		return background;
+	}
+
+	@Override
+	public IDrawable getIcon() {
+		return icon;
 	}
 
 	@Override
