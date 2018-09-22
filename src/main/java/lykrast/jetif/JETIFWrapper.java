@@ -1,5 +1,6 @@
 package lykrast.jetif;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -11,9 +12,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.oredict.OreIngredient;
 
 public class JETIFWrapper implements IRecipeWrapper {
-	protected List<ItemStack> in;
+	protected List<List<ItemStack>> in;
 	protected FluidStack fluid;
 	protected ItemStack outItem;
 	protected FluidStack outFluid;
@@ -22,19 +24,31 @@ public class JETIFWrapper implements IRecipeWrapper {
 	private JETIFWrapper(FluidStack fluid, boolean consumes, ItemStack... input) {
 		this.fluid = fluid;
 		this.consumes = consumes;
-		in = Arrays.asList(input);
+		in = new ArrayList<>();
+		for (ItemStack stack : input) in.add(Collections.singletonList(stack));
 	}
 	
+	//Items in, item out
 	public JETIFWrapper(FluidStack fluid, boolean consumeFluid, ItemStack out, ItemStack... input) {
 		this(fluid, consumeFluid, input);
 		this.outItem = out;
 		this.outFluid = null;
 	}
 	
+	//Items in, fluid out
 	public JETIFWrapper(FluidStack fluid, boolean consumeFluid, FluidStack out, ItemStack... input) {
 		this(fluid, consumeFluid, input);
 		this.outFluid = out;
 		this.outItem = ItemStack.EMPTY;
+	}
+	
+	//Oredict in, item out, thanks Astral Sorcery for needing that
+	public JETIFWrapper(FluidStack fluid, boolean consumeFluid, ItemStack out, String input) {
+		this.fluid = fluid;
+		this.consumes = consumeFluid;
+		in = Collections.singletonList(Arrays.asList(new OreIngredient(input).getMatchingStacks()));
+		this.outItem = out;
+		this.outFluid = null;
 	}
 
 	@Override
@@ -42,7 +56,7 @@ public class JETIFWrapper implements IRecipeWrapper {
 		ingredients.setInputs(VanillaTypes.FLUID, Collections.singletonList(fluid));
 		if (outFluid != null) ingredients.setOutput(VanillaTypes.FLUID, outFluid);
 		ingredients.setOutput(VanillaTypes.ITEM, outItem);
-		ingredients.setInputs(VanillaTypes.ITEM, in);
+		ingredients.setInputLists(VanillaTypes.ITEM, in);
 	}
 	
 	@Override
