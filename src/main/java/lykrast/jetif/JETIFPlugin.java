@@ -23,6 +23,7 @@ public class JETIFPlugin implements IModPlugin {
 		compats.add(new CompatCombustiveFishing());
 		compats.add(new CompatEvilCraft());
 		compats.add(new CompatThaumcraft());
+		compats.add(new CompatFluxNetworks());
 		
 		//Sort them alphabetically by modid
 		Collections.sort(compats);
