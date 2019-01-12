@@ -9,16 +9,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-public class CompatFluxNetworks extends JETIFCompat {
+public class CompatExtraUtils2 extends JETIFCompat {
 
-	public CompatFluxNetworks() {
-		super("fluxnetworks");
+	public CompatExtraUtils2() {
+		super("extrautils2");
 	}
 
 	@Override
 	public void addRecipes(List<JETIFWrapper> list) {
-		list.add(new JETIFWrapper(new FluidStack(FluidRegistry.LAVA, 1000), "jetif.fluxnetworks.fire", 
-				getModdedItem("fluxnetworks:flux"), new ItemStack(Items.REDSTONE)));
+		list.add(new JETIFWrapper(new FluidStack(FluidRegistry.LAVA, 1000), "jetif.extrautils2.well", 
+				getModdedItem("extrautils2:ingredients", 1, 11), new ItemStack(Items.GOLD_INGOT)));
 	}
 
 }

@@ -22,6 +22,7 @@ public class JETIFPlugin implements IModPlugin {
 		compats.add(new CompatAstralSorcery());
 		compats.add(new CompatCombustiveFishing());
 		compats.add(new CompatEvilCraft());
+		compats.add(new CompatExtraUtils2());
 		compats.add(new CompatThaumcraft());
 		compats.add(new CompatFluxNetworks());
 		compats.add(new CompatTeaTheStory());

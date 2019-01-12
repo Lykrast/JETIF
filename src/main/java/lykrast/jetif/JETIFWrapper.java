@@ -67,7 +67,7 @@ public class JETIFWrapper implements IRecipeWrapper {
 		String text = I18n.format(info);
 		
 		int width = minecraft.fontRenderer.getStringWidth(text);
-		int x = recipeWidth - 2 - width;
+		int x = (recipeWidth - width) / 2;
 		int y = 35;
 
 		minecraft.fontRenderer.drawString(text, x, y, Color.GRAY.getRGB());
