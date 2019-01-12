@@ -15,7 +15,7 @@ public class CompatThaumcraft extends JETIFCompat {
 
 	@Override
 	public void addRecipes(List<JETIFWrapper> list) {
-		list.add(new JETIFWrapper(new FluidStack(FluidRegistry.WATER, 1000), false, 
+		list.add(new JETIFWrapper(new FluidStack(FluidRegistry.WATER, 1000), null, 
 				FluidRegistry.getFluidStack("purifying_fluid", 1000), getModdedItem("thaumcraft:bath_salts")));
 	}
 

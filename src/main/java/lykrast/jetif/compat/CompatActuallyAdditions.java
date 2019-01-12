@@ -14,9 +14,9 @@ public class CompatActuallyAdditions extends JETIFCompat {
 
 	@Override
 	public void addRecipes(List<JETIFWrapper> list) {
-		list.add(new JETIFWrapper(FluidRegistry.getFluidStack("refinedcanolaoil", 1000), false, 
+		list.add(new JETIFWrapper(FluidRegistry.getFluidStack("refinedcanolaoil", 1000), null, 
 				FluidRegistry.getFluidStack("crystaloil", 1000), getModdedItem("actuallyadditions:item_misc", 1, 23)));
-		list.add(new JETIFWrapper(FluidRegistry.getFluidStack("crystaloil", 1000), false, 
+		list.add(new JETIFWrapper(FluidRegistry.getFluidStack("crystaloil", 1000), null, 
 				FluidRegistry.getFluidStack("empoweredoil", 1000), getModdedItem("actuallyadditions:item_misc", 1, 24)));
 	}
 

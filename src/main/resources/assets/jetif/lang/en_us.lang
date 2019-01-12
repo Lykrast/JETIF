@@ -1,3 +1,5 @@
 jetif.category=Throwing In Fluid
-jetif.consume.item=Consumes items
-jetif.consume.fluid=Consumes fluid
+jetif.consume.item=§cConsumes items
+jetif.consume.fluid=§cConsumes fluid
+
+jetif.fluxnetworks.fire=Also works with Fire

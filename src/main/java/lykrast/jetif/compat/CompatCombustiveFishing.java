@@ -15,9 +15,9 @@ public class CompatCombustiveFishing extends JETIFCompat {
 
 	@Override
 	public void addRecipes(List<JETIFWrapper> list) {
-		list.add(new JETIFWrapper(new FluidStack(FluidRegistry.WATER, 1000), false, 
+		list.add(new JETIFWrapper(new FluidStack(FluidRegistry.WATER, 1000), null, 
 				getModdedItem("combustfish:cooled_cod"), getModdedItem("combustfish:combustive_cod")));
-		list.add(new JETIFWrapper(new FluidStack(FluidRegistry.WATER, 1000), false, 
+		list.add(new JETIFWrapper(new FluidStack(FluidRegistry.WATER, 1000), null, 
 				getModdedItem("combustfish:tempered_swordfish"), getModdedItem("combustfish:searing_swordfish")));
 	}
 

@@ -18,7 +18,7 @@ public class CompatFluxNetworks extends JETIFCompat {
 	@Override
 	public void addRecipes(List<JETIFWrapper> list) {
 		//TODO: find a way to make fire render
-		list.add(new JETIFWrapper(new FluidStack(FluidRegistry.LAVA, 1000), false, 
+		list.add(new JETIFWrapper(new FluidStack(FluidRegistry.LAVA, 1000), "jetif.fluxnetworks.fire", 
 				getModdedItem("fluxnetworks:flux"), new ItemStack(Items.REDSTONE)));
 	}
 
