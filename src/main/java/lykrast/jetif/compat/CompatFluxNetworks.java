@@ -12,6 +12,8 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
 
+//TODO: find the way forge wants to be used
+@SuppressWarnings("deprecation")
 public class CompatFluxNetworks extends JETIFCompat {
 
 	public CompatFluxNetworks() {
