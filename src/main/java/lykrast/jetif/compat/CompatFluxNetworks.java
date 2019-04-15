@@ -10,10 +10,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fml.relauncher.ReflectionHelper;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
-//TODO: find the way forge wants to be used
-@SuppressWarnings("deprecation")
 public class CompatFluxNetworks extends JETIFCompat {
 
 	public CompatFluxNetworks() {
@@ -31,8 +29,8 @@ public class CompatFluxNetworks extends JETIFCompat {
 	private boolean shouldRegister() {
 		//Register if config is not found or if it is found and it's active
 		try {
-			Class<?> config = ReflectionHelper.getClass(getClass().getClassLoader(), "sonar.flux.FluxConfig");
-			Field field = ReflectionHelper.findField(config, "enableFluxRecipe");
+			Class<?> config = Class.forName("sonar.flux.FluxConfig");
+			Field field = ObfuscationReflectionHelper.findField(config, "enableFluxRecipe");
 			return (Boolean)field.get(null);
 		} catch (Exception e) {
 			JETIF.logger.warn("Couldn't load config field for Flux Networks, report this issue on JETIF's GitHub");
