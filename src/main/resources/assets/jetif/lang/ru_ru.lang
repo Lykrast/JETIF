@@ -1,0 +1,7 @@
+jetif.category=Бросание в жидкость
+jetif.consume.item=§cПотребляемые предметы
+jetif.consume.fluid=§cПотребляемая жидкость
+
+jetif.fluxnetworks.fire=Также работает с огнем
+jetif.extrautils2.well=Кирпичи нижнего мира на всех 4 сторонах
+jetif.atum.chance=Шанс %d%%
