@@ -1,6 +1,6 @@
 jetif.category=物品丟入流體
-jetif.consume.item=消耗物品
-jetif.consume.fluid=消耗流體
+jetif.consume.item=§c消耗物品
+jetif.consume.fluid=§c消耗流體
 
 jetif.fluxnetworks.fire=也適用於火
 jetif.extrautils2.well=四周都是地獄磚

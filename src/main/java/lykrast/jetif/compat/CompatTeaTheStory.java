@@ -7,16 +7,16 @@ import lykrast.jetif.JETIFWrapper;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-public class CompatThaumcraft extends JETIFCompat {
+public class CompatTeaTheStory extends JETIFCompat {
 
-	public CompatThaumcraft() {
-		super("thaumcraft");
+	public CompatTeaTheStory() {
+		super("teastory");
 	}
 
 	@Override
 	public void addRecipes(List<JETIFWrapper> list) {
 		list.add(new JETIFWrapper(new FluidStack(FluidRegistry.WATER, 1000), null, 
-				FluidRegistry.getFluidStack("purifying_fluid", 1000), getModdedItem("thaumcraft:bath_salts")));
+				getModdedItem("teastory:washed_rice"), getModdedItem("teastory:xian_rice")));
 	}
 
 }

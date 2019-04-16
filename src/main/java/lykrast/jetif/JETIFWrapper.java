@@ -1,5 +1,6 @@
 package lykrast.jetif;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -19,33 +20,33 @@ public class JETIFWrapper implements IRecipeWrapper {
 	protected FluidStack fluid;
 	protected ItemStack outItem;
 	protected FluidStack outFluid;
-	protected boolean consumes;
+	protected String info;
 	
-	private JETIFWrapper(FluidStack fluid, boolean consumes, ItemStack... input) {
+	private JETIFWrapper(FluidStack fluid, String info, ItemStack... input) {
 		this.fluid = fluid;
-		this.consumes = consumes;
+		this.info = info;
 		in = new ArrayList<>();
 		for (ItemStack stack : input) in.add(Collections.singletonList(stack));
 	}
 	
 	//Items in, item out
-	public JETIFWrapper(FluidStack fluid, boolean consumeFluid, ItemStack out, ItemStack... input) {
-		this(fluid, consumeFluid, input);
+	public JETIFWrapper(FluidStack fluid, String info, ItemStack out, ItemStack... input) {
+		this(fluid, info, input);
 		this.outItem = out;
 		this.outFluid = null;
 	}
 	
 	//Items in, fluid out
-	public JETIFWrapper(FluidStack fluid, boolean consumeFluid, FluidStack out, ItemStack... input) {
-		this(fluid, consumeFluid, input);
+	public JETIFWrapper(FluidStack fluid, String info, FluidStack out, ItemStack... input) {
+		this(fluid, info, input);
 		this.outFluid = out;
 		this.outItem = ItemStack.EMPTY;
 	}
 	
 	//Oredict in, item out, thanks Astral Sorcery for needing that
-	public JETIFWrapper(FluidStack fluid, boolean consumeFluid, ItemStack out, String input) {
+	public JETIFWrapper(FluidStack fluid, String info, ItemStack out, String input) {
 		this.fluid = fluid;
-		this.consumes = consumeFluid;
+		this.info = info;
 		in = Collections.singletonList(Arrays.asList(new OreIngredient(input).getMatchingStacks()));
 		this.outItem = out;
 		this.outFluid = null;
@@ -61,16 +62,14 @@ public class JETIFWrapper implements IRecipeWrapper {
 	
 	@Override
 	public void drawInfo(Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
-		if (!consumes) return;
+		if (info == null) return;
 		
-		String text;
-		if (outFluid == null) text = I18n.format("jetif.consume.fluid");
-		else text = I18n.format("jetif.consume.item");
+		String text = I18n.format(info);
 		
 		int width = minecraft.fontRenderer.getStringWidth(text);
-		int x = recipeWidth - 2 - width;
+		int x = (recipeWidth - width) / 2;
 		int y = 35;
 
-		minecraft.fontRenderer.drawString(text, x, y, 0xFFFF6060);
+		minecraft.fontRenderer.drawString(text, x, y, Color.GRAY.getRGB());
 	}
 }

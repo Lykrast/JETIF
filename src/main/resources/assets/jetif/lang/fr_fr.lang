@@ -1,3 +1,7 @@
 jetif.category=Plonger dans fluide
-jetif.consume.item=Consomme les objets
-jetif.consume.fluid=Consomme le fluide
+jetif.consume.item=§cConsomme les objets
+jetif.consume.fluid=§cConsomme le fluide
+
+jetif.fluxnetworks.fire=Marche aussi avec du feu
+jetif.extrautils2.well=Briques du Nether des 4 côtés
+jetif.atum.chance=%d%% de chance
