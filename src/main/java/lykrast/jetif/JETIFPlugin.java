@@ -28,6 +28,7 @@ public class JETIFPlugin implements IModPlugin {
 		compats.add(new CompatTeaTheStory());
 		compats.add(new CompatDeepMobLearning());
 		compats.add(new CompatAtum2());
+		compats.add(new CompatRoots());
 		
 		//Sort them alphabetically by modid
 		Collections.sort(compats);
