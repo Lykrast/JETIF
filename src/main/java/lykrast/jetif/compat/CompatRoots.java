@@ -25,10 +25,10 @@ public class CompatRoots extends JETIFCompat {
     public void addRecipes(List<JETIFWrapper> list)
     {
         //Elemental Soil to Magmatic Soil
-        list.add(new JETIFWrapper(new FluidStack(FluidRegistry.LAVA, 1000), "jetif.roots.magmatic_soil",
+        list.add(new JETIFWrapper(new FluidStack(FluidRegistry.LAVA, 1000), "",
                 getModdedItem("roots:magmatic_soil"), getModdedItem("roots:elemental_soil")));
         //Elemental Soil to Aqueous Soil
-        list.add(new JETIFWrapper(new FluidStack(FluidRegistry.WATER, 1000), "jetif.roots.aqueous_soil",
+        list.add(new JETIFWrapper(new FluidStack(FluidRegistry.WATER, 1000), "",
                 getModdedItem("roots:aqueous_soil"), getModdedItem("roots:elemental_soil")));
     }
 }
