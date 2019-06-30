@@ -26,9 +26,9 @@ public class CompatRoots extends JETIFCompat {
     {
         //Elemental Soil to Magmatic Soil
         list.add(new JETIFWrapper(new FluidStack(FluidRegistry.LAVA, 1000), "",
-                getModdedItem("roots:magmatic_soil"), getModdedItem("roots:elemental_soil")));
+                getModdedItem("roots:elemental_soil_fire"), getModdedItem("roots:elemental_soil")));
         //Elemental Soil to Aqueous Soil
         list.add(new JETIFWrapper(new FluidStack(FluidRegistry.WATER, 1000), "",
-                getModdedItem("roots:aqueous_soil"), getModdedItem("roots:elemental_soil")));
+                getModdedItem("roots:elemental_soil_water"), getModdedItem("roots:elemental_soil")));
     }
 }
