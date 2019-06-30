@@ -6,8 +6,6 @@ import lykrast.jetif.JETIFCompat;
 import lykrast.jetif.JETIFWrapper;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fluids.UniversalBucket;
 
 public class CompatCuisine extends JETIFCompat {
 
