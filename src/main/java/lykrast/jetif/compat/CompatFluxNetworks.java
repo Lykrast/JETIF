@@ -29,7 +29,7 @@ public class CompatFluxNetworks extends JETIFCompat {
 	private boolean shouldRegister() {
 		//Register if config is not found or if it is found and it's active
 		try {
-			Class<?> config = Class.forName("fluxnetworks.FluxConfig");
+			Class<?> config = Class.forName("sonar.fluxnetworks.FluxConfig");
 			Field recipe = ObfuscationReflectionHelper.findField(config, "enableFluxRecipe");
 			Field old = ObfuscationReflectionHelper.findField(config, "enableOldRecipe");
 			return (Boolean)recipe.get(null) && (Boolean)old.get(null);
